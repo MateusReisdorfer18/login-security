@@ -33,7 +33,7 @@ public class SecurityConfig {
     };
 
     public static final String[] ENDPOINTS_SELLER = {
-            "/users/authenticated/admin"
+            "/users/authenticated/seller"
     };
 
     @Bean

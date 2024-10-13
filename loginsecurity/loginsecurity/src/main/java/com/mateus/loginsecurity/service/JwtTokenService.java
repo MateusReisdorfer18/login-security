@@ -14,8 +14,7 @@ import java.time.ZonedDateTime;
 
 @Service
 public class JwtTokenService {
-    @Value("${jwt.secret.key}")
-    private static String secretKey;
+    private static final String secretKey = "cgu27Bds5L8gKujYOaV0kjFjKe619ykUtUIndWxylarugi2cKe";
     private static final String issuer = "my-api-login-security";
 
     public String generateToken(UserDetailsImpl userDetails) {
