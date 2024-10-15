@@ -1,0 +1,49 @@
+<div class="main d-flex flex-column border p-5 rounded-4 col-4">
+    <div class="d-flex flex-column p-2 align-items-center">
+        <h2 class="fs-1 text-white fst-italic fw-bold">Cadastro</h2>
+    </div>
+    <form (ngSubmit)="register()" class="d-flex flex-column align-items-center">
+        <div class="d-flex flex-column col-10 mx-auto">
+            <label class="text-white fw-light pb-1">Nome</label>
+            <input type="text" placeholder="Digite seu nome" 
+                class="p-3 rounded-4 border-0" 
+                [(ngModel)]="createUser.name" name="name" 
+                (input)="validateForms()">
+        </div>
+        <div class="d-flex flex-column col-10 mx-auto py-4">
+            <label class="text-white fw-light pb-1">Email</label>
+            <input type="email" placeholder="Digite o email" 
+                class="p-3 rounded-4 border-0" 
+                [(ngModel)]="createUser.email" name="email" 
+                (input)="validateForms()">
+        </div>
+        <div class="d-flex flex-column col-10 mx-auto">
+            <label class="text-white fw-light pb-1">Senha</label>
+            <input type="password" placeholder="Digite a senha" 
+                class="p-3 rounded-4 border-0" 
+                [(ngModel)]="createUser.password" name="password" 
+                (input)="validateForms()">
+        </div>
+        <div class="d-flex flex-column col-10 mx-auto py-4">
+            <label class="text-white fw-light pb-1">Confirme sua Senha</label>
+            <input type="password" placeholder="Confirme sua Senha" 
+                class="p-3 rounded-4 border-0" 
+                [(ngModel)]="passwordConfirmation" name="password" 
+                (input)="validateForms()">
+        </div>
+        <div class="d-flex flex-column col-10 mx-auto pb-4">
+            <label class="text-white fw-light pb-1">Tipo</label>
+            <select class="p-3 rounded-4 border-0" name="tipos" id="tipos" 
+                [value]="createUser.role" 
+                [(ngModel)]="createUser.role" name="role" 
+                (input)="validateForms()">
+                <option *ngFor="let tipo of this.tipos" [ngValue]="tipo">{{tipo}}</option>
+            </select>
+        </div>
+        <button type="submit" 
+            class="mt-3 p-2 rounded border-0 bg-white col-5 fw-semibold"
+            [disabled]="!canSubmit"
+            [ngClass]="canSubmit ? 'canSubmit':''">Cadastrar</button>
+    </form>
+    <a routerLink="/login" class="col-4 text-white text-center mx-auto pt-3">Já tem uma conta? Clique aqui e entre agora!</a>
+</div>

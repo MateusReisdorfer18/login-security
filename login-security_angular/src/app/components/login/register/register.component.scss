@@ -1,0 +1,57 @@
+@import "../../../style/style";
+
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.main {
+    background-color: $VERDE;
+
+    h2 {
+        font-size: $FONT-SIZE-LG;
+    }
+
+    p, label {
+        font-size: $FONT-SIZE-MD;
+    }
+
+    button, input, select {
+        box-shadow: 0 .4rem .4rem $PRETO;
+    }
+
+    button {
+        opacity: .7;
+        font-size: $FONT-SIZE-BTN;
+    }
+    
+    input, select, button {
+        outline: 0;
+    }
+
+    input::placeholder, option, select {
+        font-size: $FONT-SIZE-SM;
+        font-style: italic;
+        font-weight: 500;
+        color: $PRETO;
+    }
+
+    input:hover, .canSubmit:hover, select:hover {
+        transition: .2s;
+        scale: 103%;
+    }
+
+    .canSubmit:hover, a:hover {
+        opacity: 1;
+    }
+
+    select, a {
+        cursor: pointer;
+    }
+
+    a {
+        opacity: .8;
+    }
+}

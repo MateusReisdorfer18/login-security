@@ -1,0 +1,13 @@
+@import "../../style/style";
+
+.main {
+    background-color: $VERDE;
+    
+    h1, .name {
+        font-size: $FONT-SIZE-LG;
+    }
+
+    .role {
+        font-size: $FONT-SIZE-MD;
+    }
+}
